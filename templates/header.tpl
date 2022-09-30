@@ -1,10 +1,8 @@
-<?php
-
-echo '<!doctype html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <base href="'.BASE_URL.'">
+    <base href="{BASE_URL}">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Mx Motos</title>
@@ -62,7 +60,3 @@ echo '<!doctype html>
         </ul>
 
         <!--TODAS LAS MOTOS-->
-
-
-
-';

@@ -1,5 +1,6 @@
 <?php
 include_once "controller/bikesController.php";
+include_once "controller/loginController.php";
 
 //base URl
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
@@ -14,20 +15,28 @@ if (!empty($_GET['action'])) {
 
 $params = explode('/', $action);
 
+$controller = new BikesController;
+$login = new LoginController;
 
 switch ($params[0]) {
     case 'home':
-        $controller = new BikesController;
+        $controller;
         $controller->showAll();
         break;
     case 'marcas':
-        $controller = new BikesController;
+        $controller;
         $controller->showByBrand($params[1]);    //params 1 seria la marca:
         break;
     case 'view';
-    $controller = new BikesController;
-    $controller->viewItem($params[1]); // seria el id moto
-
+    $controller;
+    $controller->viewItem($params[1]);
+    case 'edit';
+    $controller;
+    //s$controller->editItem($params[1]); // seria el id moto
+    case 'login';
+    $login;
+    $login->viewLogin();
+    break;
     default:
        echo 'default';
         break;
