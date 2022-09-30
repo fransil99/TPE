@@ -1,5 +1,5 @@
 <?php
-
+require_once('libs/smarty/Smarty.class.php');
 class BikesView
 {
 
@@ -10,7 +10,7 @@ class BikesView
             echo '
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                                 <h3>' . $bike->nombre . '</h3>
-                                <img src="' . $bike->imagen . '" width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
+                                <img src="' . $bike->imagen . '" alt="'.$bike->nombre.'" width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
                                     dy=".3em">' . $bike->descripcion . '</text>
                                     <p>Cilindrada:'.$bike->cilindrada.'</p>
                             <div class="card-body">
