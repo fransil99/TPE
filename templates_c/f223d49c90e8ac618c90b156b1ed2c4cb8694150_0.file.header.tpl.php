@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-09-30 22:11:15
+/* Smarty version 4.2.1, created on 2022-10-04 22:44:50
   from 'C:\xampp\htdocs\TPE\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_63374d63dad2a1_20741292',
+  'unifunc' => 'content_633c9b42316bf9_96439572',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f223d49c90e8ac618c90b156b1ed2c4cb8694150' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPE\\templates\\header.tpl',
-      1 => 1664568428,
+      1 => 1664916286,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_63374d63dad2a1_20741292 (Smarty_Internal_Template $_smarty_tpl) {
+function content_633c9b42316bf9_96439572 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <html lang="en">
 
@@ -73,16 +73,10 @@ function content_63374d63dad2a1_20741292 (Smarty_Internal_Template $_smarty_tpl)
     <!-- GALERIA -->
         
         <!--SELECT MARCA-->
-        <ul class="list-group align-items-center" >
-        <li class="list-group-item"><a href="home">Todas las motos</a></li>
-        <li class="list-group-item"><a href="marcas/3">Honda</a></li>
-        <li class="list-group-item"><a href="marcas/4">Yamaha</a></li>
-        <li class="list-group-item"><a href="marcas/5">KTM</a></li>
-        <li class="list-group-item"><a href="marcas/6">Husqvarna</a></li>
-        <li class="list-group-item"><a href="marcas/7">Kawasaki</a></li>
-        <li class="list-group-item"><a href="marcas/8">Suzuki</a></li>
+        <ul  class="bg-dark list-group align-items-center" >
+        <li class="bg-dark list-group-item"><a href="home">Home</a></li>
+        <li class="bg-dark list-group-item"><a href="brands">Marcas</a></li>
         </ul>
-
         <!--TODAS LAS MOTOS-->
 <?php }
 }

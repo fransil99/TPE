@@ -10,7 +10,8 @@ class BikesModel
     }
     /*Obtengo la lista de motos */
 
-    public function getAll()
+
+    public function getAllBikes()
     {
         $query = $this->db->prepare('SELECT * FROM motos');
         $query->execute();
@@ -25,35 +26,18 @@ class BikesModel
         $bikes = $query->fetchAll(PDO::FETCH_OBJ);
         return $bikes;
     }
-    
+
+
     public function getItem($id){
-        $query = $this->db->prepare('SELECT * FROM motos INNER JOIN marcas ON marcas.id_marca_fk = motos.id_marca_fk WHERE id_moto = ?');
+        $query = $this->db->prepare('SELECT * FROM motos INNER JOIN marcas ON marcas.id_marca = motos.id_marca_fk WHERE id_moto = ?');
         $query->execute([$id]);
-        $item = $query->fetch(PDO::FETCH_OBJ);;
+        $item = $query->fetch(PDO::FETCH_OBJ);
         return $item;
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    public function getAllbyCylinder($cylinder)
-    {
-        $query = $this->db->prepare('SELECT * FROM motos WHERE cilindrada = ? ORDER BY nombre ASC');
-        $query->execute([$cylinder]);
-        $bikes = $query->fetchAll(PDO::FETCH_OBJ);
-        return $bikes;
+    public function editBikebyId($id,$nombre,$imagen,$descripcion,$cilindrada,$precio,$idFk){
+        $query = $this->db->prepare('UPDATE deudas SET nombre=?,imagen=?,descripcion=?,cilindrada=?,id_marca_fk=? WHERE id_moto=?');
+        $query->execute(array($nombre,$imagen,$descripcion,$cilindrada,$precio,$idFk,$id));
     }
 }

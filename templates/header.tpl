@@ -49,14 +49,8 @@
     <!-- GALERIA -->
         
         <!--SELECT MARCA-->
-        <ul class="list-group align-items-center" >
-        <li class="list-group-item"><a href="home">Todas las motos</a></li>
-        <li class="list-group-item"><a href="marcas/3">Honda</a></li>
-        <li class="list-group-item"><a href="marcas/4">Yamaha</a></li>
-        <li class="list-group-item"><a href="marcas/5">KTM</a></li>
-        <li class="list-group-item"><a href="marcas/6">Husqvarna</a></li>
-        <li class="list-group-item"><a href="marcas/7">Kawasaki</a></li>
-        <li class="list-group-item"><a href="marcas/8">Suzuki</a></li>
+        <ul  class="bg-dark list-group align-items-center" >
+        <li class="bg-dark list-group-item"><a href="home">Home</a></li>
+        <li class="bg-dark list-group-item"><a href="brands">Marcas</a></li>
         </ul>
-
         <!--TODAS LAS MOTOS-->
