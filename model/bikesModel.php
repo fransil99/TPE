@@ -35,9 +35,25 @@ class BikesModel
         return $item;
     }
 
+    public function getBike($id){
+        $query = $this->db->prepare('SELECT * FROM motos WHERE id_moto = ?');
+        $query->execute([$id]);
+        $item = $query->fetch(PDO::FETCH_OBJ);
+        return $item;
+    }
+
+    public function deleteBikebyId($id){
+        $query = $this->db->prepare('DELETE FROM motos WHERE id_moto =?');
+        $query->execute([$id]);
+    }
 
     public function editBikebyId($id,$nombre,$imagen,$descripcion,$cilindrada,$precio,$idFk){
-        $query = $this->db->prepare('UPDATE deudas SET nombre=?,imagen=?,descripcion=?,cilindrada=?,id_marca_fk=? WHERE id_moto=?');
+        $query = $this->db->prepare('UPDATE motos SET nombre=?,imagen=?,descripcion=?,cilindrada=?,precio=?,id_marca_fk=? WHERE id_moto=?');
         $query->execute(array($nombre,$imagen,$descripcion,$cilindrada,$precio,$idFk,$id));
+    }
+
+    public function insertBike($nombre,$imagen,$descripcion,$cilindrada,$precio,$idFk){
+        $query = $this->db->prepare('INSERT INTO motos (nombre,imagen,descripcion,cilindrada,precio,id_marca_fk) VALUES (?,?,?,?,?,?)');
+        $query->execute(array($nombre,$imagen,$descripcion,$cilindrada,$precio,$idFk));
     }
 }

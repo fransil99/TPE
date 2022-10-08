@@ -16,17 +16,18 @@ class BikesController
     }
     public function showAll()
     {
+        $brand = null;
         $bikes = $this->model->getAllBikes();
         if (!empty($bikes)) {
-            $this->view->showBikes($bikes);
+            $this->view->showBikes($bikes,$brand);
         } else {
             $this->view->showError('No hay motos de ese genero');
         }
     }
 
-    public function showByBrand($brand)
+    public function showByBrand($id)
     {
-        $bikes = $this->model->getAllByBrand($brand);
+        $bikes = $this->model->getAllByBrand($id);
         $this->view->showBikes($bikes);
     }
 
@@ -40,22 +41,47 @@ class BikesController
     public function formEditItem($id)
     {
         $brands = $this->modelBrand->getAllBrands();
-        $bike = $this->model->getItem($id);
-        $this->view->formEditBike($id,$bike,$brands);
+        $bike = $this->model->getBike($id);
+        $this->view->formEditBike($bike,$brands);
     }
 
-    public function editBike()
+    public function deleteBike($id){
+        $this->model->deleteBikebyId($id);
+        header("Location: ".BASE_URL."home");
+    }
+    
+    public function formAddBike(){
+        $brands = $this->modelBrand->getAllBrands();
+        $this->view->showCreateBike($brands);
+    }
+
+    public function createBike(){
+        if(!empty($_POST['nombre'])&&($_POST['imagen'])&&($_POST['descripcion'])&&($_POST['cilindrada']) && ($_POST['precio'])&& ($_POST['idFk'])){
+        $nombre = $_POST['nombre'];
+        $imagen = ($_POST['imagen']);
+        $descripcion = ($_POST['descripcion']);
+        $cilindrada = $_POST['cilindrada'];
+        $precio = $_POST['precio'];
+        $idFk= $_POST['idFk'];
+        $this->model->insertBike($nombre,$imagen,$descripcion,$cilindrada,$precio,$idFk);    
+        header("Location:".BASE_URL."home");
+        }else{
+        $this->view->showError("error");
+        }
+    }
+
+
+    public function editBike($id)
     {
-        if (!empty($_POST['nombre']) && ($_POST['imagen']) && ($_POST['descripcion']) && ($_POST['cilindrada']) && ($_POST['precio']) && ($_POST['idFk']) && ($_POST['id'])) {
-            $nombre = $_POST(['nombre']);
-            $imagen = $_POST(['imagen']);
-            $descripcion = $_POST(['descripcion']);
-            $cilindrada = $_POST(['cilindrada']);
-            $precio = $_POST(['precio']);
-            $idFk = $_POST(['idFk']);
-            $id = $_POST(['id']);
-            $this->model->editBikebyId($nombre, $imagen, $descripcion, $cilindrada, $precio, $idFk, $id);
-            header("Location:" . BASE_URL . "brands");
+        if (!empty($_POST['nombre']) && ($_POST['imagen']) && ($_POST['descripcion']) && ($_POST['cilindrada']) && ($_POST['precio'])&& ($_POST['idFk'])) {
+            $nombre = $_POST['nombre'];
+            $imagen = $_POST['imagen'];
+            $descripcion = $_POST['descripcion'];
+            $cilindrada = $_POST['cilindrada'];
+            $precio = $_POST['precio'];
+            $idFk= $_POST['idFk'];
+            $this->model->editBikebyId($id,$nombre,$imagen,$descripcion,$cilindrada,$precio,$idFk);
+            header("Location:" . BASE_URL . "home");
         }
     }
 }

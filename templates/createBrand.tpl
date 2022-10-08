@@ -20,6 +20,7 @@
         <input name="image" type="text" class="form-control"  required
             aria-describedby="emailHelp"> <small id="emailHelp" class="form-text text-muted">Link de la imagen</small>
     </div>
+    
 
     <button type="submit" class="btn btn-primary">Agregar Marca</button>
 </form>

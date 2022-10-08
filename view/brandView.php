@@ -17,6 +17,11 @@ class BrandView
         $this->smarty->display('templates/createBrand.tpl');
     }
 
+    public function formEditBrand($brand){
+        $this->smarty->assign('brand',$brand);
+        $this->smarty->display('templates/editBrand.tpl');
+    }
+
     public function showError(){
         $this->smarty->display("error");
     }

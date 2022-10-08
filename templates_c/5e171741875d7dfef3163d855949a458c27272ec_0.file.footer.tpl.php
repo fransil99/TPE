@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-09-30 22:46:29
+/* Smarty version 4.2.1, created on 2022-10-06 20:30:02
   from 'C:\xampp\htdocs\TPE\templates\footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_633755a5f032a7_88127651',
+  'unifunc' => 'content_633f1eaa49e932_59080717',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5e171741875d7dfef3163d855949a458c27272ec' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPE\\templates\\footer.tpl',
-      1 => 1664570787,
+      1 => 1665081001,
       2 => 'file',
     ),
   ),
@@ -20,9 +20,9 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_633755a5f032a7_88127651 (Smarty_Internal_Template $_smarty_tpl) {
+function content_633f1eaa49e932_59080717 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
-    <footer class="text-muted py-5">
+    <footer class="text-muted py-5 bg-dark">
         <div class="container">
             <p class="float-end mb-1">
                 <a href="#">Back to top</a>

@@ -16,40 +16,55 @@ if (!empty($_GET['action'])) {
 
 $params = explode('/', $action);
 
-$controller = new BikesController;
-$login = new LoginController;
-$brand = new BrandController;
+$bikesController = new BikesController;
+$loginController = new LoginController;
+$brandController = new BrandController;
 
 switch ($params[0]) {
     case 'home':
-        $controller->showAll();
+        $bikesController->showAll();
         break;
     case 'brands':
-        $brand->showBrands();
+        $brandController->showBrands();
         break;
     case 'bikeBrands':
-        $controller->showByBrand($params[1]);    //params 1 seria la marca:
+        $bikesController->showByBrand($params[1]);    //params 1 seria la marca:
         break;
-    case 'view';
-        $controller->viewItem($params[1]);
+    case 'viewBike';
+        $bikesController->viewItem($params[1]);
         break;
     case "createBrand";
-        $brand->createBrand();
+        $brandController->createBrand();
         break;
-    case 'edit';
-        $controller->formEditItem($params[1]); // seria el id moto
+    case 'editBike';
+        $bikesController->formEditItem($params[1]); // seria el id moto
         break;
     case 'editBike':
-        $controller->editBike();
+        $bikesController->editBike($params[1]);
         break;
     case 'addBrand':
-        $brand->addBrand();
+        $brandController->addBrand();
+        break;
+    case 'formAddBike':
+        $bikesController->formAddBike();
+        break;
+    case "createBike";
+        $bikesController->createBike();
+        break;
+    case 'deleteBike';
+        $bikesController->deleteBike($params[1]);
         break;
     case 'deleteBrand';
-        $brand->deleteBrand($params[1]);
+        $brandController->deleteBrand($params[1]);
         break;
     case 'login';
-        $login->viewLogin();
+        $loginController->viewLogin();
+        break;
+    case 'formEditBrand':
+        $brandController->formEditBrand($params[1]);
+        break;
+    case 'editBrand':
+        $brandController->editBrand($params[1]);
         break;
     default:
         echo 'default';
