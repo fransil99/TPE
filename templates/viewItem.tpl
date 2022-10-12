@@ -19,4 +19,5 @@
         </div>
     </div>
 </div>
+<a class="link-dark" href="home">Volver</a>
 {include file="footer.tpl"}

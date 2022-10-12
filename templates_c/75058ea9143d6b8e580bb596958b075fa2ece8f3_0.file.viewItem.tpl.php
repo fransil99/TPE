@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-08 18:29:47
+/* Smarty version 4.2.1, created on 2022-10-12 16:46:00
   from 'C:\xampp\htdocs\TPE\templates\viewItem.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_6341a57b573ff9_04210479',
+  'unifunc' => 'content_6346d32804bfe2_96255422',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '75058ea9143d6b8e580bb596958b075fa2ece8f3' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPE\\templates\\viewItem.tpl',
-      1 => 1665246586,
+      1 => 1665585956,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6341a57b573ff9_04210479 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6346d32804bfe2_96255422 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
@@ -52,6 +52,7 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
         </div>
     </div>
 </div>
+<a class="link-dark" href="home">Volver</a>
 <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 }
 }

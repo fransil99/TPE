@@ -8,6 +8,7 @@ class BikesController
     private $model;
     private $view;
     private $modelBrand;
+    private $authHelper;
 
     public function __construct()
     {
@@ -20,11 +21,8 @@ class BikesController
     {
         $brand = null;
         $bikes = $this->model->getAllBikes();
-        if (!empty($bikes)) {
-            $this->view->showBikes($bikes,$brand);
-        } else {
-            $this->view->showError('No hay motos de ese genero');
-        }
+        $this->view->showBikes($bikes,$brand);
+
     }
 
     public function showByBrand($id)

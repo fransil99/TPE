@@ -30,9 +30,9 @@ switch ($params[0]) {
     case 'hash':
         $authController->generateHash();
         break;
-    // case 'logout':
-    //     $authController->logout();
-    //     break;
+    case 'logout':
+        $authController->logout();
+        break;
     case 'home':
         $bikesController->showAll();
         break;

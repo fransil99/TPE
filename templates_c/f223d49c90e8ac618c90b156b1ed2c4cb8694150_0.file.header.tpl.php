@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-11 22:51:33
+/* Smarty version 4.2.1, created on 2022-10-12 16:54:25
   from 'C:\xampp\htdocs\TPE\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_6345d7553b5fc7_43311926',
+  'unifunc' => 'content_6346d521f0bf83_41612236',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f223d49c90e8ac618c90b156b1ed2c4cb8694150' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPE\\templates\\header.tpl',
-      1 => 1665520708,
+      1 => 1665586429,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6345d7553b5fc7_43311926 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6346d521f0bf83_41612236 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -63,7 +63,11 @@ function content_6345d7553b5fc7_43311926 (Smarty_Internal_Template $_smarty_tpl)
                 </a>
                 <li class="bg-dark list-group-item"><a class="link-light" href="home">Home</a></li>
                 <li class="bg-dark list-group-item"><a class="link-light" href="brands">Marcas</a></li>
-                <li class="bg-dark list-group-item"><a class="link-light" href="formAddBike">Añadir moto</a></li>
+                <?php if ((isset($_SESSION['IS_LOGGED']))) {?>
+                    <li class="bg-dark list-group-item"><a class="link-light" href="formAddBike">Añadir moto</a></li>
+                    <li class="bg-dark list-group-item"><a class="link-light" href="logout">Logout</a></li>
+                <?php }?>
+                <li class="bg-dark list-group-item"><a class="link-light" href="login">Login</a></li>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
                     aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>

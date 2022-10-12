@@ -5,12 +5,13 @@ require_once "helpers/authHelper.php";
 class BrandController{
     private $model;
     private $view;
+    private $authHelper;
 
     public function __construct()
     {
         $this->model = new BrandModel();
         $this->view = new BrandView();
-        $this->authHelper = new AuthHelper;
+        $this->authHelper = new AuthHelper();
     }
 
     public function showBrands(){
@@ -22,6 +23,12 @@ class BrandController{
         $this->view->showCreateBrand();
     }
     
+    public function formEditBrand($id)
+    {
+        $brand = $this->model->getBrand($id);
+        $this->view->formEditBrand($brand);
+    }
+
     public function addBrand(){
         $this->authHelper->checkLoggedIn();
         if(!empty($_POST['image'])&&($_POST['brand'])&&($_POST['description'])){
@@ -35,11 +42,6 @@ class BrandController{
         }
     }
 
-    public function formEditBrand($id)
-    {
-        $brand = $this->model->getBrand($id);
-        $this->view->formEditBrand($brand);
-    }
 
     public function editBrand($id){
             $this->authHelper->checkLoggedIn();
