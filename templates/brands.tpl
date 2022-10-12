@@ -14,7 +14,7 @@
             {if isset($brand->imagen_marca)}
                 <img src="{$brand->imagen_marca}" alt="{$brand->nombre_marca}" width="60px" height="45px" fill="#55595c" />
             {/if}
-            
+
             {if isset($smarty.session.IS_LOGGED)}
                 <a class="btn btn-danger btn-sm" href="deleteBrand/{$brand->id_marca}">Eliminar Marca </a>-
                 <a class="btn btn-primary" href="formEditBrand/{$brand->id_marca}">Editar Marca </a>

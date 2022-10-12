@@ -28,7 +28,6 @@ class AuthController
         if (!empty($user)) {
             if (password_verify($password, $user->password)) {
                 // inicio una session para este usuario
-                echo "entro al segundo if";
                 session_start();
                 $_SESSION['USER_PASSWORD'] = $user->password;
                 $_SESSION['USER_EMAIL'] = $user->email;

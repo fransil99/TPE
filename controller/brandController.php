@@ -15,6 +15,7 @@ class BrandController{
     }
 
     public function showBrands(){
+        session_start();
         $brands = $this->model->getAllBrands();
         $this->view->showAllBrands($brands);
     }
@@ -29,7 +30,7 @@ class BrandController{
         $this->view->formEditBrand($brand);
     }
 
-    public function addBrand(){
+     function addBrand(){
         $this->authHelper->checkLoggedIn();
         if(!empty($_POST['image'])&&($_POST['brand'])&&($_POST['description'])){
         $image = ($_POST['image']);
@@ -43,7 +44,7 @@ class BrandController{
     }
 
 
-    public function editBrand($id){
+     function editBrand($id){
             $this->authHelper->checkLoggedIn();
             if (!empty($_POST['nombre']) && ($_POST['imagen']) && ($_POST['descripcion'])) {
                 $nombre = $_POST['nombre'];
@@ -56,7 +57,7 @@ class BrandController{
     }
 
 
-    public function deleteBrand($id){
+     function deleteBrand($id){
         $this->authHelper->checkLoggedIn();
         $brand = $this->model->getBrand($id);
         if(!empty ($brand) ){

@@ -33,7 +33,6 @@ class BikesController
 
     public function viewItem($id)
     {
-
         $item = $this->model->getItem($id);
         if (!empty($item))
             $this->view->showItem($item);
@@ -47,18 +46,19 @@ class BikesController
         $this->view->formEditBike($bike,$brands,$brand);
     }
 
-    public function deleteBike($id){
-        $this->authHelper->checkLoggedIn();
-        $this->model->deleteBikebyId($id);
-        header("Location: ".BASE_URL."home");
-    }
     
     public function formAddBike(){
         $brands = $this->modelBrand->getAllBrands();
         $this->view->showCreateBike($brands);
     }
 
-    public function createBike(){
+    function deleteBike($id){
+       $this->authHelper->checkLoggedIn();
+       $this->model->deleteBikebyId($id);
+       header("Location: ".BASE_URL."home");
+   }
+
+     function createBike(){
         $this->authHelper->checkLoggedIn();
         if(!empty($_POST['nombre'])&&($_POST['imagen'])&&($_POST['descripcion'])&&($_POST['cilindrada']) && ($_POST['precio'])&& ($_POST['idFk'])){
         $nombre = $_POST['nombre'];
@@ -75,7 +75,7 @@ class BikesController
     }
 
 
-    public function editBike($id)
+     function editBike($id)
     {
         $this->authHelper->checkLoggedIn();
         if (!empty($_POST['nombre']) && ($_POST['imagen']) && ($_POST['descripcion']) && ($_POST['cilindrada']) && ($_POST['precio'])&& ($_POST['idFk'])) {
