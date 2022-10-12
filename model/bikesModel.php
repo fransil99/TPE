@@ -52,8 +52,19 @@ class BikesModel
         $query->execute(array($nombre,$imagen,$descripcion,$cilindrada,$precio,$idFk,$id));
     }
 
-    public function insertBike($nombre,$imagen,$descripcion,$cilindrada,$precio,$idFk){
+    public function insertBike($nombre,$imagen = null,$descripcion,$cilindrada,$precio,$idFk){
+        $pathImg = null;
+        if ($imagen)
+            $pathImg = $this->uploadImage($imagen);
+
         $query = $this->db->prepare('INSERT INTO motos (nombre,imagen,descripcion,cilindrada,precio,id_marca_fk) VALUES (?,?,?,?,?,?)');
         $query->execute(array($nombre,$imagen,$descripcion,$cilindrada,$precio,$idFk));
     }
+
+    private function uploadImage($image){
+        $target = 'img/task/' . uniqid() . '.jpg';
+        move_uploaded_file($image, $target);
+        return $target;
+    }
+
 }

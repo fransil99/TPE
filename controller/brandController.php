@@ -1,6 +1,7 @@
 <?php
 require_once "model/brandModel.php";
 require_once "view/brandView.php";
+require_once "helpers/authHelper.php";
 class BrandController{
     private $model;
     private $view;
@@ -9,6 +10,7 @@ class BrandController{
     {
         $this->model = new BrandModel();
         $this->view = new BrandView();
+        $this->authHelper = new AuthHelper;
     }
 
     public function showBrands(){
@@ -21,6 +23,7 @@ class BrandController{
     }
     
     public function addBrand(){
+        $this->authHelper->checkLoggedIn();
         if(!empty($_POST['image'])&&($_POST['brand'])&&($_POST['description'])){
         $image = ($_POST['image']);
         $brand = ($_POST['brand']);
@@ -39,6 +42,7 @@ class BrandController{
     }
 
     public function editBrand($id){
+            $this->authHelper->checkLoggedIn();
             if (!empty($_POST['nombre']) && ($_POST['imagen']) && ($_POST['descripcion'])) {
                 $nombre = $_POST['nombre'];
                 $imagen = $_POST['imagen'];
@@ -51,7 +55,12 @@ class BrandController{
 
 
     public function deleteBrand($id){
-        $this->model->deleteBrandbyId($id);
-        header("Location: ".BASE_URL."brands");
+        $this->authHelper->checkLoggedIn();
+        $brand = $this->model->getBrand($id);
+        if(!empty ($brand) ){
+            $this->view->showAllBrands(null, "No se puede eliminar marca, contiene motos!");
+        }
+        else{$this->model->deleteBrandbyId($id);}
+        
     }
 }

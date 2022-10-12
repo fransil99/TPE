@@ -1,12 +1,14 @@
 {include file="header.tpl"}
 <form method="POST" action="editBike/{$bike->id_moto}">
-{$bike->nombre}
     <div class="form-group">
-        <label for="idFk">Seleccionar Marca</label>
+        <label for="idFk">Seleccionar Marca</label> 
         <select name="idFk">
             <p>Seleccionar Marca</p>
-            {foreach from=$brands item=$brand}
-                <option value="{$brand->id_marca}">{$brand->nombre_marca}</option>
+            <option value="{$brand->id_marca}" selected>{$brand->nombre_marca}</option>
+            {foreach from=$brands item=$b}
+                {if $b->nombre_marca != $brand->nombre_marca}
+                <option value="{$b->id_marca}">{$b->nombre_marca}</option>
+                {/if}
             {/foreach}
         </select>
     </div>

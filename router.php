@@ -1,7 +1,7 @@
 <?php
 include_once "controller/bikesController.php";
-include_once "controller/loginController.php";
 include_once "controller/brandController.php";
+include_once "controller/authController.php";
 
 //base URl
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
@@ -16,11 +16,23 @@ if (!empty($_GET['action'])) {
 
 $params = explode('/', $action);
 
+$authController = new AuthController;
 $bikesController = new BikesController;
-$loginController = new LoginController;
 $brandController = new BrandController;
 
 switch ($params[0]) {
+    case 'login':
+        $authController->showFormLogin();
+        break;
+    case 'validate':
+        $authController->validateUser();
+        break;
+    case 'hash':
+        $authController->generateHash();
+        break;
+    // case 'logout':
+    //     $authController->logout();
+    //     break;
     case 'home':
         $bikesController->showAll();
         break;
@@ -36,7 +48,7 @@ switch ($params[0]) {
     case "createBrand";
         $brandController->createBrand();
         break;
-    case 'editBike';
+    case 'formEditBike';
         $bikesController->formEditItem($params[1]); // seria el id moto
         break;
     case 'editBike':
@@ -57,9 +69,6 @@ switch ($params[0]) {
     case 'deleteBrand';
         $brandController->deleteBrand($params[1]);
         break;
-    case 'login';
-        $loginController->viewLogin();
-        break;
     case 'formEditBrand':
         $brandController->formEditBrand($params[1]);
         break;
@@ -67,6 +76,6 @@ switch ($params[0]) {
         $brandController->editBrand($params[1]);
         break;
     default:
-        echo 'default';
+    header($_SERVER["SERVER_PROTOCOL"]." 404 Not Found", true, 404);
         break;
 }

@@ -12,8 +12,9 @@
                 <small class="text-muted"> Precio:${$item->precio}</small>
             </div>
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                <img src="{$item->imagen_marca}" width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%"
-                    fill="#eceeef" dy=".3em">{$item->descripcion_marca}</text>
+                {if isset($item->imagen)}<img src="{$item->imagen_marca}" width="100%" height="100%"
+                    fill="#55595c" />{/if}<text x="50%" y="50%" fill="#eceeef"
+                    dy=".3em">{$item->descripcion_marca}</text>
             </div>
         </div>
     </div>

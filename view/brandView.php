@@ -8,8 +8,9 @@ class BrandView
         $this->smarty = new Smarty();
     }
 
-    public function showAllBrands($brands){
+    public function showAllBrands($brands, $error = null){
         $this->smarty->assign('brands',$brands);
+        $this->smarty->assign('error',$error);
         $this->smarty->display('templates/brands.tpl');
     }
 

@@ -2,6 +2,7 @@
 include_once "view/bikesView.php";
 include_once "model/bikesModel.php";
 include_once "model/brandModel.php";
+include_once "helpers/authHelper.php";
 class BikesController
 {
     private $model;
@@ -13,6 +14,7 @@ class BikesController
         $this->modelBrand = new BrandModel();
         $this->model = new BikesModel();
         $this->view = new BikesView();
+        $this->authHelper = new AuthHelper();
     }
     public function showAll()
     {
@@ -33,6 +35,7 @@ class BikesController
 
     public function viewItem($id)
     {
+
         $item = $this->model->getItem($id);
         if (!empty($item))
             $this->view->showItem($item);
@@ -42,10 +45,12 @@ class BikesController
     {
         $brands = $this->modelBrand->getAllBrands();
         $bike = $this->model->getBike($id);
-        $this->view->formEditBike($bike,$brands);
+        $brand = $this->modelBrand->getBrand($bike->id_marca_fk);
+        $this->view->formEditBike($bike,$brands,$brand);
     }
 
     public function deleteBike($id){
+        $this->authHelper->checkLoggedIn();
         $this->model->deleteBikebyId($id);
         header("Location: ".BASE_URL."home");
     }
@@ -56,6 +61,7 @@ class BikesController
     }
 
     public function createBike(){
+        $this->authHelper->checkLoggedIn();
         if(!empty($_POST['nombre'])&&($_POST['imagen'])&&($_POST['descripcion'])&&($_POST['cilindrada']) && ($_POST['precio'])&& ($_POST['idFk'])){
         $nombre = $_POST['nombre'];
         $imagen = ($_POST['imagen']);
@@ -73,6 +79,7 @@ class BikesController
 
     public function editBike($id)
     {
+        $this->authHelper->checkLoggedIn();
         if (!empty($_POST['nombre']) && ($_POST['imagen']) && ($_POST['descripcion']) && ($_POST['cilindrada']) && ($_POST['precio'])&& ($_POST['idFk'])) {
             $nombre = $_POST['nombre'];
             $imagen = $_POST['imagen'];
