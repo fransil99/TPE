@@ -42,8 +42,9 @@
                 {if isset($smarty.session.IS_LOGGED)}
                     <li class="bg-dark list-group-item"><a class="link-light" href="formAddBike">Añadir moto</a></li>
                     <li class="bg-dark list-group-item"><a class="link-light" href="logout">Logout</a></li>
+                    {else}
+                        <li class="bg-dark list-group-item"><a class="link-light" href="login">Login</a></li>
                 {/if}
-                <li class="bg-dark list-group-item"><a class="link-light" href="login">Login</a></li>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
                     aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
