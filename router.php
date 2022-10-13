@@ -36,26 +36,17 @@ switch ($params[0]) {
     case 'home':
         $bikesController->showAll();
         break;
-    case 'brands':
-        $brandController->showBrands();
-        break;
     case 'bikeBrands':
         $bikesController->showByBrand($params[1]);    //params 1 seria la marca:
         break;
     case 'viewBike';
         $bikesController->viewItem($params[1]);
         break;
-    case "createBrand";
-        $brandController->createBrand();
-        break;
     case 'formEditBike';
         $bikesController->formEditItem($params[1]); // seria el id moto
         break;
     case 'editBike':
         $bikesController->editBike($params[1]);
-        break;
-    case 'addBrand':
-        $brandController->addBrand();
         break;
     case 'formAddBike':
         $bikesController->formAddBike();
@@ -65,6 +56,15 @@ switch ($params[0]) {
         break;
     case 'deleteBike';
         $bikesController->deleteBike($params[1]);
+        break;
+    case 'brands':
+        $brandController->showBrands();
+        break;
+    case "createBrand";
+        $brandController->formCreateBrand();
+        break;
+    case 'addBrand':
+        $brandController->addBrand();
         break;
     case 'deleteBrand';
         $brandController->deleteBrand($params[1]);
@@ -76,6 +76,6 @@ switch ($params[0]) {
         $brandController->editBrand($params[1]);
         break;
     default:
-    header($_SERVER["SERVER_PROTOCOL"]." 404 Not Found", true, 404);
+        header($_SERVER["SERVER_PROTOCOL"] . " 404 Not Found", true, 404);
         break;
 }

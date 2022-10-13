@@ -4,10 +4,10 @@
         <label for="idFk">Seleccionar Marca</label> 
         <select name="idFk">
             <p>Seleccionar Marca</p>
-            <option value="{$brand->id_marca}" selected>{$brand->nombre_marca}</option>
-            {foreach from=$brands item=$b}
-                {if $b->nombre_marca != $brand->nombre_marca}
-                <option value="{$b->id_marca}">{$b->nombre_marca}</option>
+            <option value="{$bike->id_marca}" selected>{$bike->nombre_marca}</option>
+            {foreach from=$brands item=$brand}
+                {if $brand->nombre_marca != $bike->nombre_marca}
+                <option value="{$brand->id_marca}">{$brand->nombre_marca}</option>
                 {/if}
             {/foreach}
         </select>

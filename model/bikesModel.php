@@ -28,19 +28,19 @@ class BikesModel
     }
 
 
-    public function getItem($id){
+    public function getBike($id){
         $query = $this->db->prepare('SELECT * FROM motos INNER JOIN marcas ON marcas.id_marca = motos.id_marca_fk WHERE id_moto = ?');
         $query->execute([$id]);
         $item = $query->fetch(PDO::FETCH_OBJ);
         return $item;
     }
 
-    public function getBike($id){
-        $query = $this->db->prepare('SELECT * FROM motos WHERE id_moto = ?');
-        $query->execute([$id]);
-        $item = $query->fetch(PDO::FETCH_OBJ);
-        return $item;
-    }
+    // public function getBike($id){
+    //     $query = $this->db->prepare('SELECT * FROM motos WHERE id_moto = ?');
+    //     $query->execute([$id]);
+    //     $item = $query->fetch(PDO::FETCH_OBJ);
+    //     return $item;
+    // }
 
     public function deleteBikebyId($id){
         $query = $this->db->prepare('DELETE FROM motos WHERE id_moto =?');

@@ -21,9 +21,8 @@ class BikesView
         $this->smarty->display('templates/viewItem.tpl'); 
     }
 
-    public function formEditBike($bike,$brands,$brand){
+    public function formEditBike($bike,$brands){
         $this->smarty->assign('brands',$brands);
-        $this->smarty->assign('brand',$brand);
         $this->smarty->assign('bike',$bike);
         $this->smarty->display('templates/editItem.tpl');
     }

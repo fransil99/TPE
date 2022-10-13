@@ -20,7 +20,7 @@ class BrandController{
         $this->view->showAllBrands($brands);
     }
 
-    public function createBrand(){
+    public function formCreateBrand(){
         $this->view->showCreateBrand();
     }
     

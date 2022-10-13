@@ -20,7 +20,7 @@ class AuthController
 
     public function validateUser()
     {
-        if (!empty(['email']) && (['password'])) {
+        if (!empty($_POST['email']) && ($_POST['password'])) {
             $email = $_POST['email'];
             $password = $_POST['password'];
             $user = $this->model->getUserByEmail($email);
@@ -33,17 +33,16 @@ class AuthController
                 $_SESSION['USER_EMAIL'] = $user->email;
                 $_SESSION['IS_LOGGED'] = true;
                 header("Location: " . BASE_URL . 'home');
-                
+            } else {
+                $this->view->showFormLogin("El usuario o la contraseña es incorrecto.");
             }
         } else {
-            $this->view->showFormLogin("El usuario o la contraseña no existe.");
+            $this->view->showFormLogin("El usuario es incorrecto");
         }
-        //agarro el user
-
-        // verifico que el usuario existe y que las contraseñas son iguales
     }
 
-    public function generateHash(){
+    public function generateHash()
+    {
         $hash = password_hash('admin', PASSWORD_BCRYPT);
         echo $hash;
     }

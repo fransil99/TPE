@@ -33,7 +33,7 @@ class BikesController
 
     public function viewItem($id)
     {
-        $item = $this->model->getItem($id);
+        $item = $this->model->getBike($id);
         if (!empty($item))
             $this->view->showItem($item);
     }
