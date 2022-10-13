@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-06 20:30:02
+/* Smarty version 4.2.1, created on 2022-10-13 22:24:44
   from 'C:\xampp\htdocs\TPE\templates\footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_633f1eaa49e932_59080717',
+  'unifunc' => 'content_6348740c780972_33684637',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5e171741875d7dfef3163d855949a458c27272ec' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPE\\templates\\footer.tpl',
-      1 => 1665081001,
+      1 => 1665692683,
       2 => 'file',
     ),
   ),
@@ -20,12 +20,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_633f1eaa49e932_59080717 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6348740c780972_33684637 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
     <footer class="text-muted py-5 bg-dark">
         <div class="container">
             <p class="float-end mb-1">
-                <a href="#">Back to top</a>
             </p>
             <p class="mb-1">Catalogo e informacion de motos</p>
         </div>

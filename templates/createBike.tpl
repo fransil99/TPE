@@ -24,7 +24,7 @@
 
     <div class="form-group">
         <label for="imagen">Subir imagen</label>
-        <input name="imagen" type="file" class="form-control">
+        <input name="imagen" type="text" class="form-control">
         <small class="form-text text-muted">Seleccionar imagen de tu computadora.</small>
     </div>
 

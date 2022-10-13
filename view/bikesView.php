@@ -8,9 +8,10 @@ class BikesView
         $this->smarty = new Smarty();
     }
    
-    public function showBikes($bikes)
+    public function showBikes($bikes, $brand = null)
     {
         session_start();
+        $this->smarty->assign('brand',$brand);
         $this->smarty->assign('bikes',$bikes);
         $this->smarty->display('templates/bikes.tpl');
     }
@@ -20,6 +21,7 @@ class BikesView
         $this->smarty->assign('item',$item);
         $this->smarty->display('templates/viewItem.tpl'); 
     }
+
 
     public function formEditBike($bike,$brands){
         $this->smarty->assign('brands',$brands);
@@ -31,8 +33,11 @@ class BikesView
         $this->smarty->display('templates/createBike.tpl');
     }
 
-    public function showError($msgError)
-    {
-        
+    public function showError($error){
+        echo $error;
+    }
+
+    public function showHome(){
+        $this->smarty->display('templates/showHome.tpl');
     }
 }

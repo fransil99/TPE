@@ -1,10 +1,10 @@
 <?php
+define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
 include_once "controller/bikesController.php";
 include_once "controller/brandController.php";
 include_once "controller/authController.php";
 
 //base URl
-define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
 
 // leer la accion
 
@@ -34,6 +34,9 @@ switch ($params[0]) {
         $authController->logout();
         break;
     case 'home':
+        $bikesController->showHome();
+        break;
+    case 'showAll':
         $bikesController->showAll();
         break;
     case 'bikeBrands':

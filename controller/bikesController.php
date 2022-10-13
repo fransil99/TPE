@@ -17,18 +17,24 @@ class BikesController
         $this->view = new BikesView();
         $this->authHelper = new AuthHelper();
     }
+
+    public function showHome(){
+        session_start();
+        $this->view->showHome();
+    }
+
     public function showAll()
     {
-        $brand = null;
         $bikes = $this->model->getAllBikes();
-        $this->view->showBikes($bikes,$brand);
+        $this->view->showBikes($bikes);
 
     }
 
     public function showByBrand($id)
     {
+        $brand = $this->modelBrand->getBrand($id);
         $bikes = $this->model->getAllByBrand($id);
-        $this->view->showBikes($bikes);
+        $this->view->showBikes($bikes,$brand);
     }
 
     public function viewItem($id)
@@ -55,7 +61,7 @@ class BikesController
     function deleteBike($id){
        $this->authHelper->checkLoggedIn();
        $this->model->deleteBikebyId($id);
-       header("Location: ".BASE_URL."home");
+       header("Location: ".BASE_URL."showAll");
    }
 
      function createBike(){
@@ -68,7 +74,7 @@ class BikesController
         $precio = $_POST['precio'];
         $idFk= $_POST['idFk'];
         $this->model->insertBike($nombre,$imagen,$descripcion,$cilindrada,$precio,$idFk);    
-        header("Location:".BASE_URL."home");
+        header("Location:".BASE_URL."showAll");
         }else{
         $this->view->showError("error");
         }
@@ -86,7 +92,15 @@ class BikesController
             $precio = $_POST['precio'];
             $idFk= $_POST['idFk'];
             $this->model->editBikebyId($id,$nombre,$imagen,$descripcion,$cilindrada,$precio,$idFk);
-            header("Location:" . BASE_URL . "home");
+            header("Location:" . BASE_URL . "showAll");
         }
     }
+
+    public function showError($error){
+        echo $error;
+    }
+    
+
+
+
 }
