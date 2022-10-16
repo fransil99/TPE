@@ -13,7 +13,7 @@ class BikesModel
 
     public function getAllBikes()
     {
-        $query = $this->db->prepare('SELECT * FROM motos');
+        $query = $this->db->prepare('SELECT * FROM motos ORDER BY precio DESC');
         $query->execute();
         $bikes = $query->fetchAll(PDO::FETCH_OBJ);;
         return $bikes;
@@ -52,18 +52,21 @@ class BikesModel
         $query->execute(array($nombre,$imagen,$descripcion,$cilindrada,$precio,$idFk,$id));
     }
 
-    public function insertBike($nombre,$imagen = null,$descripcion,$cilindrada,$precio,$idFk){
+    public function insertBike($nombre,$imagen,$descripcion,$cilindrada,$precio,$idFk){
         $pathImg = null;
-        if ($imagen)
-            $pathImg = $this->uploadImage($imagen);
-
+        if($imagen){
+        $pathImg = $this->uploadImage($imagen);
         $query = $this->db->prepare('INSERT INTO motos (nombre,imagen,descripcion,cilindrada,precio,id_marca_fk) VALUES (?,?,?,?,?,?)');
-        $query->execute(array($nombre,$imagen,$descripcion,$cilindrada,$precio,$idFk));
+        $query->execute(array($nombre,$pathImg,$descripcion,$cilindrada,$precio,$idFk));
+    }else{
+        $query = $this->db->prepare('INSERT INTO motos (nombre,descripcion,cilindrada,precio,id_marca_fk) VALUES (?,?,?,?,?)');
+        $query->execute(array($nombre,$descripcion,$cilindrada,$precio,$idFk));
+        }
     }
 
-    private function uploadImage($image){
-        $target = 'img/task/' . uniqid() . '.jpg';
-        move_uploaded_file($image, $target);
+    private function uploadImage($imagen){
+        $target = 'images/bikes/' . uniqid() . '.jpg';
+        move_uploaded_file($imagen, $target);
         return $target;
     }
 

@@ -20,7 +20,7 @@ class AuthController
 
     public function validateUser()
     {
-        if (!empty($_POST['email']) && ($_POST['password'])) {
+        if (!empty($_POST['email']) && !empty($_POST['password'])) {
             $email = $_POST['email'];
             $password = $_POST['password'];
             $user = $this->model->getUserByEmail($email);

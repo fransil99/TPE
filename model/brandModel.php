@@ -12,7 +12,7 @@ class BrandModel
     public function getBrand($id){
         $query = $this->db->prepare('SELECT * FROM marcas WHERE id_marca = ?');
         $query->execute([$id]);
-        $brand = $query->fetch(PDO::FETCH_OBJ);;
+        $brand = $query->fetch(PDO::FETCH_OBJ);
         return $brand;
     }
 

@@ -2,13 +2,16 @@
 require_once "model/brandModel.php";
 require_once "view/brandView.php";
 require_once "helpers/authHelper.php";
+require_once "model/bikesModel.php";
 class BrandController{
     private $model;
     private $view;
     private $authHelper;
+    private $bikesModel;
 
     public function __construct()
     {
+        $this->bikesModel = new BikesModel;
         $this->model = new BrandModel();
         $this->view = new BrandView();
         $this->authHelper = new AuthHelper();
@@ -32,26 +35,28 @@ class BrandController{
 
      function addBrand(){
         $this->authHelper->checkLoggedIn();
-        if(!empty($_POST['image'])&&($_POST['brand'])&&($_POST['description'])){
+        if(!empty($_POST['image'])&&!empty($_POST['brand'])&&!empty($_POST['description'])){
         $image = ($_POST['image']);
         $brand = ($_POST['brand']);
         $description = ($_POST['description']);
         $this->model->insertBrand($image, $brand, $description);    
         header("Location:".BASE_URL."brands");
         }else{
-        $this->view->showError();
+        $this->view->showError("No se puede agregar");
         }
     }
 
 
      function editBrand($id){
             $this->authHelper->checkLoggedIn();
-            if (!empty($_POST['nombre']) && ($_POST['imagen']) && ($_POST['descripcion'])) {
+            if (!empty($_POST['nombre']) && !empty($_POST['imagen']) && !empty($_POST['descripcion'])) {
                 $nombre = $_POST['nombre'];
                 $imagen = $_POST['imagen'];
                 $descripcion = $_POST['descripcion'];
                 $this->model->editBrandbyId($id,$nombre,$imagen,$descripcion);
                 header("Location:" . BASE_URL . "brands");
+            }else{
+                $this->view->showError("No se puede editar");
             }
         
     }
@@ -59,11 +64,13 @@ class BrandController{
 
      function deleteBrand($id){
         $this->authHelper->checkLoggedIn();
-        $brand = $this->model->getBrand($id);
+        $brand = $this->bikesModel->getAllbyBrand($id);
         if(!empty ($brand) ){
             $this->view->showAllBrands(null, "No se puede eliminar marca, contiene motos!");
         }
-        else{$this->model->deleteBrandbyId($id);}
-        
+        else{
+            $this->model->deleteBrandbyId($id);
+            header("Location:" . BASE_URL . "brands");
+        }
     }
 }

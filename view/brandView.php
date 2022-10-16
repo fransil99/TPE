@@ -23,7 +23,8 @@ class BrandView
         $this->smarty->display('templates/editBrand.tpl');
     }
 
-    public function showError(){
-        $this->smarty->display("error");
+    public function showError($error){
+        $this->smarty->assign('error', $error);
+        $this->smarty->display("templates/error.tpl");
     }
 }

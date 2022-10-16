@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-13 19:53:36
+/* Smarty version 4.2.1, created on 2022-10-16 03:32:07
   from 'C:\xampp\htdocs\TPE\templates\bikes.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_634850a0d6b0c8_73840902',
+  'unifunc' => 'content_634b5f1729f6e6_29650658',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '37e4e24ccb4b5a0cfa0d0c42e443f15d79ba12ea' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPE\\templates\\bikes.tpl',
-      1 => 1665683616,
+      1 => 1665883681,
       2 => 'file',
     ),
   ),
@@ -22,13 +22,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_634850a0d6b0c8_73840902 (Smarty_Internal_Template $_smarty_tpl) {
+function content_634b5f1729f6e6_29650658 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 if ((isset($_smarty_tpl->tpl_vars['brand']->value))) {?>
     <div class="d-flex justify-content-center">
-    <img src="<?php echo $_smarty_tpl->tpl_vars['brand']->value->imagen_marca;?>
-" alt="<?php echo $_smarty_tpl->tpl_vars['brand']->value->nombre_marca;?>
-"  class="d-flex justify-content-center" width="15%" height="15%" fill="#55595c" />
+    <?php if ((isset($_smarty_tpl->tpl_vars['bike']->value->imagen))) {?><img src="<?php echo $_smarty_tpl->tpl_vars['bike']->value->imagen;?>
+"  alt="<?php echo $_smarty_tpl->tpl_vars['brand']->value->nombre_marca;?>
+"  class="d-flex justify-content-center" width="15%" height="15%" fill="#55595c" /><?php }?>
     </div>
     <h6><?php echo $_smarty_tpl->tpl_vars['brand']->value->descripcion_marca;?>
 </h6>
