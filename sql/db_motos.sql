@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-10-2022 a las 00:37:12
+-- Tiempo de generación: 16-10-2022 a las 05:45:50
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -45,7 +45,8 @@ INSERT INTO `marcas` (`id_marca`, `nombre_marca`, `descripcion_marca`, `imagen_m
 (6, 'Husqvarna', 'Husqvarna Motorcycles GmbH, es un fabricante de motocicletas de motocross, enduro y supermoto perteneciente desde comienzos de 2013 a KTM AG, propietaria de las marcas KTM Group . La compañía comenzó la producción en 1903 en Huskvarna, Suecia como filial de la empresa de armamento Husqvarna, que suministrara al ejército sueco rifles desde 1689. Entre julio de 2007 y enero de 2013 fue una filial de la casa bávara BMW.', 'images\\HusqvarnaLogo.png'),
 (7, 'Kawasaki', 'Kawasaki Heavy Industries Motorcycle & Engine es una división de Kawasaki Heavy Industries, dedicada a la producción de motocicletas, cuatrimotos, vehículos especializados, motos de agua, y motores de gasolina de propósito general', 'images\\KawasakiLogo.png'),
 (8, 'Suzuki', 'Suzuki Motor Corporation, es una empresa pública multinacional japonesa dedicada a la fabricación de automóviles (especialmente todoterreno y compactos), motocicletas, motores fuera borda y una variedad de productos equipados con motor de combustión interna.1​ Fue fundada en 1909 en la localidad de Minami-ku (Hamamatsu), prefectura de Shizuoka, Japón, por Michio Suzuki.2​', 'images\\SuzukiLogo.jpg'),
-(14, 'Gas Gas', 'Gas Gas es un fabricante de motocicletas español, especializado en trial, enduro y quads, con sede en Zaragoza. En 2014 se anunció su fusión con el fabricante de motos de trial OSSA.1​ En noviembre de 2015 es adquirida, en suspensión de pagos, por Torrot. En 2017 cambió su sede social a Zaragoza.2​ En septiembre de 2019 fue comprada por la empresa austríaca KTM 3​', 'images\\GasGasLogo.png');
+(14, 'Gas Gas', 'Gas Gas es un fabricante de motocicletas español, especializado en trial, enduro y quads, con sede en Zaragoza. En 2014 se anunció su fusión con el fabricante de motos de trial OSSA.1​ En noviembre de 2015 es adquirida, en suspensión de pagos, por Torrot. En 2017 cambió su sede social a Zaragoza.2​ En septiembre de 2019 fue comprada por la empresa austríaca KTM 3​', 'images\\GasGasLogo.png'),
+(18, 'Sherco', 'Sherco', 'images/bikes/634b7b29886b8.jpg');
 
 -- --------------------------------------------------------
 
@@ -137,13 +138,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `marcas`
 --
 ALTER TABLE `marcas`
-  MODIFY `id_marca` int(45) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_marca` int(45) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de la tabla `motos`
 --
 ALTER TABLE `motos`
-  MODIFY `id_moto` int(45) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id_moto` int(45) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- Restricciones para tablas volcadas

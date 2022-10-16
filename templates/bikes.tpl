@@ -1,7 +1,7 @@
 {include file="header.tpl"}
 {if isset($brand)}
     <div class="d-flex justify-content-center">
-    {if isset($bike->imagen)}<img src="{$bike->imagen}"  alt="{$brand->nombre_marca}"  class="d-flex justify-content-center" width="15%" height="15%" fill="#55595c" />{/if}
+    {if isset($brand->imagen_marca)}<img src="{$brand->imagen_marca}"  alt="{$brand->nombre_marca}"  class="d-flex justify-content-center" width="15%" height="15%" fill="#55595c" />{/if}
     </div>
     <h6>{$brand->descripcion_marca}</h6>
 {/if}
