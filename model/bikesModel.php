@@ -48,8 +48,15 @@ class BikesModel
     }
 
     public function editBikebyId($id,$nombre,$imagen,$descripcion,$cilindrada,$precio,$idFk){
+        $pathImg = null;
+        if($imagen){
+        $pathImg = $this->uploadImage($imagen);
         $query = $this->db->prepare('UPDATE motos SET nombre=?,imagen=?,descripcion=?,cilindrada=?,precio=?,id_marca_fk=? WHERE id_moto=?');
+        $query->execute(array($nombre,$pathImg,$descripcion,$cilindrada,$precio,$idFk,$id));
+    }else{
+        $query = $this->db->prepare('UPDATE motos SET nombre=?,descripcion=?,cilindrada=?,precio=?,id_marca_fk=? WHERE id_moto=?');
         $query->execute(array($nombre,$imagen,$descripcion,$cilindrada,$precio,$idFk,$id));
+        }
     }
 
     public function insertBike($nombre,$imagen,$descripcion,$cilindrada,$precio,$idFk){

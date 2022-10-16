@@ -1,5 +1,5 @@
 {include file="header.tpl"}
-<form method="POST" action="editBike/{$bike->id_moto}">
+<form method="POST" action="editBike/{$bike->id_moto}" enctype="multipart/form-data">
     <div class="form-group">
         <label for="idFk">Seleccionar Marca</label> 
         <select name="idFk">
@@ -28,7 +28,7 @@
 
     <div class="form-group">
         <label for="imagen">Url de la imagen</label>
-        <input value="{$bike->imagen}" name="imagen" type="text" class="form-control" required aria-describedby="emailHelp"> <small
+        <input value="{$bike->imagen}" name="imagen" type="file" class="form-control" required aria-describedby="emailHelp"> <small
             id="emailHelp" class="form-text text-muted">Editar link de la imagen.</small>
     </div>
 

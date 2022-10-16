@@ -91,14 +91,19 @@ class BikesController
     function editBike($id)
     {
         $this->authHelper->checkLoggedIn();
-        if (!empty($_POST['nombre']) && !empty($_POST['imagen']) && !empty($_POST['descripcion']) && !empty($_POST['cilindrada']) && !empty($_POST['precio']) && !empty($_POST['idFk'])) {
+        if (!empty($_POST['nombre'])&& !empty($_POST['descripcion']) && !empty($_POST['cilindrada']) && !empty($_POST['precio']) && !empty($_POST['idFk'])) 
+        {
             $nombre = $_POST['nombre'];
-            $imagen = $_POST['imagen'];
             $descripcion = $_POST['descripcion'];
             $cilindrada = $_POST['cilindrada'];
             $precio = $_POST['precio'];
             $idFk = $_POST['idFk'];
-            $this->model->editBikebyId($id, $nombre, $imagen, $descripcion, $cilindrada, $precio, $idFk);
+            if ($_FILES['imagen']['type'] == "image/jpg" || $_FILES['imagen']['type'] == "image/jpeg" || $_FILES['imagen']['type'] == "image/png") 
+                {
+                    $this->model->editBikebyId($id, $nombre, $_FILES['imagen']['tmp_name'], $descripcion, $cilindrada, $precio, $idFk);
+                } else {
+                    $this->model->editBikebyId($id, $nombre,null, $descripcion, $cilindrada, $precio, $idFk);
+                }
             header("Location:" . BASE_URL . "showAll");
         }else{
             $this->view->showError("No se puede editar");

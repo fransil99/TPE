@@ -1,5 +1,5 @@
 {include file="header.tpl"}
-<form method="POST" action="addBrand">
+<form method="POST" action="addBrand" enctype="multipart/form-data">
 
     <div class="form-group">
         <label for="brand">Nombre de la marca</label>
@@ -17,7 +17,7 @@
 
     <div class="form-group">
         <label for="image">Url de la imagen</label>
-        <input name="image" type="text" class="form-control"  required
+        <input name="imagen" type="file" class="form-control"  required
             aria-describedby="emailHelp"> <small id="emailHelp" class="form-text text-muted">Link de la imagen</small>
     </div>
     

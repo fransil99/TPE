@@ -1,6 +1,6 @@
 {include file="header.tpl"}
 <h3>Editar Marca:</h3>
-<form action="editBrand/{$brand->id_marca}" method="POST" >
+<form action="editBrand/{$brand->id_marca}" method="POST" enctype="multipart/form-data" >
 
     <div class="form-group">
         <label for="nombre">Nombre de la marca</label>
@@ -17,7 +17,7 @@
 
     <div class="form-group">
         <label for="imagen">Url de la imagen</label>
-        <input value="{$brand->imagen_marca}" name="imagen" type="text" class="form-control" required
+        <input value="{$brand->imagen_marca}" name="imagen" type="file" class="form-control" required
             aria-describedby="emailHelp"> <small id="emailHelp" class="form-text text-muted">Editar link de la
             imagen.</small>
     </div>
