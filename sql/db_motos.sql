@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-10-2022 a las 05:45:50
+-- Tiempo de generación: 17-10-2022 a las 17:51:57
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -40,13 +40,13 @@ CREATE TABLE `marcas` (
 
 INSERT INTO `marcas` (`id_marca`, `nombre_marca`, `descripcion_marca`, `imagen_marca`) VALUES
 (3, 'Honda', 'Honda ha sido el fabricante de motocicletas más grande del mundo desde 1959, así como también el fabricante de motores de combustión interna más grande del mundo medido por volumen, produciendo más de 14 millones de motores de combustión interna cada año. Honda se convirtió en el segundo mayor fabricante de automóviles japonés en 2001.', 'images\\LogoHonda.jpg'),
-(4, 'Yamaha', 'Desde su fundación como fabricante de motos el 1 de Julio de 1955 (la sede de Yamaha Motor Company se sitúa en Iwata-Japón), Yamaha trabaja para crear productos que se encuentran entre los mejores del mundo, mediante su constante búsqueda de calidad.', 'images\\YamahaLogo.png'),
+(4, 'Yamaha', 'Desde su fundación como fabricante de motos el 1 de Julio de 1955 (la sede de Yamaha Motor Company se sitúa en Iwata-Japón), Yamaha trabaja para crear productos que se encuentran entre los mejores del mundo, mediante su constante búsqueda de calidad.', 'images/imgTemp/634cbbdc0a7f5.jpg'),
 (5, 'KTM', 'KTM es una firma atrevida cuya gama de productos abarca desde las trail hasta las deportivas de carretera, pasando por enduro, cross, supermotard y por las categorías pequeñas en asfalto, con varios modelos de 125 y 350 centímetros cúbicos e incluso, motos eléctricas destinadas al enduro y motocross.', 'images\\KTMLogo.jpg'),
 (6, 'Husqvarna', 'Husqvarna Motorcycles GmbH, es un fabricante de motocicletas de motocross, enduro y supermoto perteneciente desde comienzos de 2013 a KTM AG, propietaria de las marcas KTM Group . La compañía comenzó la producción en 1903 en Huskvarna, Suecia como filial de la empresa de armamento Husqvarna, que suministrara al ejército sueco rifles desde 1689. Entre julio de 2007 y enero de 2013 fue una filial de la casa bávara BMW.', 'images\\HusqvarnaLogo.png'),
 (7, 'Kawasaki', 'Kawasaki Heavy Industries Motorcycle & Engine es una división de Kawasaki Heavy Industries, dedicada a la producción de motocicletas, cuatrimotos, vehículos especializados, motos de agua, y motores de gasolina de propósito general', 'images\\KawasakiLogo.png'),
 (8, 'Suzuki', 'Suzuki Motor Corporation, es una empresa pública multinacional japonesa dedicada a la fabricación de automóviles (especialmente todoterreno y compactos), motocicletas, motores fuera borda y una variedad de productos equipados con motor de combustión interna.1​ Fue fundada en 1909 en la localidad de Minami-ku (Hamamatsu), prefectura de Shizuoka, Japón, por Michio Suzuki.2​', 'images\\SuzukiLogo.jpg'),
 (14, 'Gas Gas', 'Gas Gas es un fabricante de motocicletas español, especializado en trial, enduro y quads, con sede en Zaragoza. En 2014 se anunció su fusión con el fabricante de motos de trial OSSA.1​ En noviembre de 2015 es adquirida, en suspensión de pagos, por Torrot. En 2017 cambió su sede social a Zaragoza.2​ En septiembre de 2019 fue comprada por la empresa austríaca KTM 3​', 'images\\GasGasLogo.png'),
-(18, 'Sherco', 'Sherco', 'images/bikes/634b7b29886b8.jpg');
+(18, 'Sherco', 'Sherco', 'images/imgTemp/634cbbe7073a9.jpg');
 
 -- --------------------------------------------------------
 
@@ -87,7 +87,7 @@ INSERT INTO `motos` (`id_moto`, `nombre`, `imagen`, `descripcion`, `cilindrada`,
 (25, 'GAS GAS MC 250F', 'images\\GASGAS250F.jpg', '¡Nuestra \"pequeña\" 4 tiempos es grande en diversión y la garantía de dibujar la mayor sonrisa en tu rostro! Preparada para la competición, la MC 250F se adapta a una gran variedad de pilotos, así que tanto si estás empezando a rodarte en circuitos locales como si luchas por quedar campeón, ¡esta es tu moto! Con un motor compacto que genera su potencia máxima a 14.000 rpm, no hace falta decir que esta cosa es una auténtica locura.', 250, 8199, 14),
 (26, 'GAS GAS MC 350F', 'images\\GASGAS350F.jpg', 'La MC 350F es sin duda alguna la moto de motocross definitiva para el piloto de hoy en día. Ofreciendo a los pilotos de todos los niveles lo mejor de todo, ofrece el equilibrio perfecto entre una potencia arrasadora, comportamiento ligero y una frenada superior vuelta tras vuelta. Suena como algo increíble, ¿verdad? ¡Pues es verdad!', 350, 10799, 14),
 (27, 'KAWASAKI KX 250', 'images\\KAWASAKI KX 250.png', 'La KX250 es la máquina probada en campeonatos que hemos construido para que tú puedas ser el siguiente. Sé el próximo campeón. Sé el próximo héroe. Sé la próxima leyenda. Sé el próximo pionero de toda una generación de grandeza. En la KX250, tu momento es ahora. Con: nuevo motor de 4 tiempos más potente de 249 cc, nuevo embrague hidráulico de disco cónico, nuevo arranque eléctrico, nuevo y delgado bastidor perimetral de aluminio.', 250, 9399, 7),
-(28, 'KAWASAKI KX 450', 'images\\KAWASAKI KX 450.png', 'Con más campeonatos de Supercross y Motocross que cualquier otro fabricante, el nombre KX es sinónimo de victoria. La KX450 representa el buque insignia de la gama KX, construida con el único propósito de dominar la pista. Durante las últimas cuatro décadas, hemos aprendido lo que se necesita para ganar y mantenerse en la cima. Nuestra dedicación a la construcción de la máquina definitiva es innegable, y la KX450 lo representa al máximo.', 450, 12399, 7);
+(28, 'KAWASAKI KX 450', 'images/imgTemp/634cbbb8dbbf4.jpg', 'Con más campeonatos de Supercross y Motocross que cualquier otro fabricante, el nombre KX es sinónimo de victoria. La KX450 representa el buque insignia de la gama KX, construida con el único propósito de dominar la pista. Durante las últimas cuatro décadas, hemos aprendido lo que se necesita para ganar y mantenerse en la cima. Nuestra dedicación a la construcción de la máquina definitiva es innegable, y la KX450 lo representa al máximo.', 450, 12399, 7);
 
 -- --------------------------------------------------------
 
@@ -138,13 +138,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `marcas`
 --
 ALTER TABLE `marcas`
-  MODIFY `id_marca` int(45) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id_marca` int(45) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT de la tabla `motos`
 --
 ALTER TABLE `motos`
-  MODIFY `id_moto` int(45) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id_moto` int(45) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- Restricciones para tablas volcadas
