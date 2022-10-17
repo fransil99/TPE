@@ -33,7 +33,7 @@ class BrandModel
             $query = $this->db->prepare('INSERT INTO marcas (nombre_marca,descripcion_marca,imagen_marca) VALUES (?,?,?)');
             $query->execute(array($brand, $description, $pathImg));
         } else {
-            $query = $this->db->prepare('INSERT INTO marcas (nombre_marca,descripcion_marca,imagen_marca) VALUES (?,?)');
+            $query = $this->db->prepare('INSERT INTO marcas (nombre_marca,descripcion_marca) VALUES (?,?)');
             $query->execute(array($brand, $description));
         }
 
