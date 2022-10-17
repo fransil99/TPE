@@ -27,8 +27,8 @@
     </div>
 
     <div class="form-group">
-        <label for="imagen">Url de la imagen</label>
-        <input value="{$bike->imagen}" name="imagen" type="file" class="form-control" required aria-describedby="emailHelp"> <small
+        <label for="imagen">Subir imagen</label>
+        <input value="{$bike->imagen}" name="imagen" type="file" class="form-control"  aria-describedby="emailHelp"> <small
             id="emailHelp" class="form-text text-muted">Editar link de la imagen.</small>
     </div>
 

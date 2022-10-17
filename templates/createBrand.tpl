@@ -16,8 +16,8 @@
     </div>
 
     <div class="form-group">
-        <label for="image">Url de la imagen</label>
-        <input name="imagen" type="file" class="form-control"  required
+        <label for="image">Subir imagen</label>
+        <input name="imagen" type="file" class="form-control"  
             aria-describedby="emailHelp"> <small id="emailHelp" class="form-text text-muted">Link de la imagen</small>
     </div>
     

@@ -60,7 +60,7 @@ class BrandModel
 
     private function uploadImage($imagen)
     {
-        $target = 'images/bikes/' . uniqid() . '.jpg';
+        $target = 'images/imgTemp/' . uniqid() . '.jpg';
         move_uploaded_file($imagen, $target);
         return $target;
     }

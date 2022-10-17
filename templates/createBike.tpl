@@ -12,31 +12,31 @@
 
     <div class="form-group">
         <label for="nombre">Nombre</label>
-        <input type="text" name="nombre" class="form-control">
+        <input type="text" name="nombre" class="form-control" required>
         <small  class="form-text text-muted">Editar nombre</small>
     </div>
 
     <div class="form-group">
-        <label for="descripcion">Descripcion</label>
-        <input name="descripcion" type="text" class="form-control">
+        <label for="descripcion">Descripcion</label >
+        <input name="descripcion" type="text" class="form-control" required>
         <small class="form-text text-muted">Breve descripcion de la moto</small>
     </div>
 
     <div class="form-group">
         <label for="imagen">Subir imagen</label>
-        <input name="imagen" type="file" class="form-control">
+        <input name="imagen" type="file" class="form-control" >
         <small class="form-text text-muted">Seleccionar imagen de tu computadora.</small>
     </div>
 
     <div class="form-group">
         <label for="cilindrada">Cilindrada</label>
-        <input name="cilindrada" type="number" class="form-control">
+        <input name="cilindrada" type="number" class="form-control"required>
         <small class="form-text text-muted"> CC.</small>
     </div>
 
     <div class="form-group">
         <label for="precio">Precio</label>
-        <input name="precio" type="number" class="form-control"> 
+        <input name="precio" type="number" class="form-control" required> 
         <small class="form-text text-muted">Precio en USD</small>
     </div>
 

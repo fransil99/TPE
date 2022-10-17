@@ -55,7 +55,7 @@ class BikesModel
         $query->execute(array($nombre,$pathImg,$descripcion,$cilindrada,$precio,$idFk,$id));
     }else{
         $query = $this->db->prepare('UPDATE motos SET nombre=?,descripcion=?,cilindrada=?,precio=?,id_marca_fk=? WHERE id_moto=?');
-        $query->execute(array($nombre,$imagen,$descripcion,$cilindrada,$precio,$idFk,$id));
+        $query->execute(array($nombre,$descripcion,$cilindrada,$precio,$idFk,$id));
         }
     }
 
@@ -72,7 +72,7 @@ class BikesModel
     }
 
     private function uploadImage($imagen){
-        $target = 'images/bikes/' . uniqid() . '.jpg';
+        $target = 'images/imgTemp/' . uniqid() . '.jpg';
         move_uploaded_file($imagen, $target);
         return $target;
     }
